@@ -1,0 +1,24 @@
+---
+#networks:
+#  traefik:
+#    external: true
+
+services:
+  netbootxyz:
+    image: ghcr.io/netbootxyz/netbootxyz
+    container_name: netbootxyz
+#    networks:
+#      - traefik
+    volumes:
+      - ./config:/config # optional
+      - ./assets:/assets # optional
+    ports:
+      - 3000:3000
+      - 69:69/udp
+      - 8084:80
+    restart: unless-stopped
+#    labels:
+#      traefik.enable: true
+#      traefik.http.routers.netbootxyz.entryPoints: https
+#      traefik.http.routers.netbootxyz.rule: Host(`netboot.yourdomain.com`)
+#      traefik.http.services.netbootxyz.loadbalancer.server.port: 3000
