@@ -1,0 +1,8 @@
+#!ipxe
+set base-url http://netboot.xyz-host-ip:8084/DietPi/live
+set restore-nfs nfs-share-ip:/path/to/nfs/share/DietPi/home/partimag
+
+imgfree
+kernel ${base-url}/vmlinuz boot=live union=overlay username=user config components quiet loglevel=0 noswap edd=on nomodeset enforcing=0 noeject locales=C.UTF-8 keyboard-layouts=gb ocs_live_run="ocs-live-restore" ocs_live_extra_param="-icds -k1 -r -e2 -j2 -b -p poweroff restoredisk DietPi_NativePC-UEFI-x86_64-Bookworm_Installer ask_user" ocs_prerun="mount -t nfs ${restore-nfs} /home/partimag" ocs_live_batch="yes" net.ifnames=0 nomodeset vga=normal nosplash fetch=${base-url}/filesystem.squashfs
+initrd ${base-url}/initrd.img
+boot
