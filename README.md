@@ -28,5 +28,7 @@ Custom ipxe menu that will automatically install DietPi over the network
 10) Modify linux.ipxe to include an entry for DietPi - you can also replace with the linux.ipxe in this repo
 
 Now you should be able to pxe boot into NetBoot.xyz
+
 Select Linux Network Installs and select DietPi from the list
+
 DietPi should start installing automatically.
