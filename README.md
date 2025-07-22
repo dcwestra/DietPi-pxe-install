@@ -1,5 +1,5 @@
 # DietPi-pxe-install
-Custom ipxe menu that will automatically install DietPi over the network
+Custom ipxe menu that will automatically install DietPi over the network via NetBoot.xyz
 
 ## How to set up
 1) Configure NetBoot.xyz
